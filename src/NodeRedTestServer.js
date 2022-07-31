@@ -16,7 +16,7 @@ export class NodeRedTestServer{
     }
     async testFlow(nodeArray,flow,inputNodeId,outputNodeId,testInput,done){
         let testOutput = undefined
-        this.server.load(nodeArray,flow, ()=>{
+        await this.server.load(nodeArray,flow, ()=>{
             const inputNode = this.server.getNode(inputNodeId)
             const outputNode = this.server.getNode(outputNodeId)
             console.log('Got input: ',testInput)
