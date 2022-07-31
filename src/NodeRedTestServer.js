@@ -25,12 +25,12 @@ export class NodeRedTestServer{
                 try{
                     testOutput = msg
                     console.log(msg)
-                    done()
+                    return Promise.resolve(msg)
                 }
                 catch(err)
                 {
                     console.error(`${err}`)
-                    done(err)
+                    return Promise.reject(err)
                 }
                 
             })
