@@ -1,6 +1,6 @@
 {
   "name": "node-red-test-helper-tool",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Make node-red-node-test-helper easier to use",
   "main": "dist/NodeRedTestServer.cjs.js",
   "module": "dist/NodeRedTestServer.esm.js",
