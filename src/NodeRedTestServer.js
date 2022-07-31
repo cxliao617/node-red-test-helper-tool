@@ -19,9 +19,9 @@ export class NodeRedTestServer{
         await this.server.load(nodeArray,flow,async ()=>{
             const inputNode = this.server.getNode(inputNodeId)
             const outputNode = this.server.getNode(outputNodeId)
+            console.log('Got input: ',testInput)
             inputNode.send(testInput)
             await outputNode.on('input',(msg)=>{
-                console.log(msg)
                 testOutput = msg
             })
         })
