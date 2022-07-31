@@ -26,6 +26,7 @@ export class NodeRedTestServer{
                 console.log(msg)
             })
         })
+        this.server.unload()
         return testOutput
     }
 }
