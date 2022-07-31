@@ -20,7 +20,7 @@ export class NodeRedTestServer{
             const inputNode = this.server.getNode(inputNodeId)
             const outputNode = this.server.getNode(outputNodeId)
             console.log('Got input: ',testInput)
-            
+            console.log(inputNode,outputNode)
             outputNode.on('input',(msg)=>{
                 try{
                     testOutput = msg
