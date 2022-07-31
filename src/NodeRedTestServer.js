@@ -16,14 +16,22 @@ export class NodeRedTestServer{
     }
     async testFlow(nodeArray,flow,inputNodeId,outputNodeId,testInput){
         let testOutput = undefined
-        await this.server.load(nodeArray,flow,async ()=>{
+        await this.server.load(nodeArray,flow, (done)=>{
             const inputNode = this.server.getNode(inputNodeId)
             const outputNode = this.server.getNode(outputNodeId)
             console.log('Got input: ',testInput)
-            await inputNode.send(testInput)
-            await outputNode.on('input',(msg)=>{
-                testOutput = msg
-                console.log(msg)
+            inputNode.send(testInput)
+            outputNode.on('input',(msg)=>{
+                try{
+                    testOutput = msg
+                    console.log(msg)
+                    done()
+                }
+                catch(err)
+                {
+                    done(err)
+                }
+                
             })
         })
         this.server.unload()
