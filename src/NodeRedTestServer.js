@@ -24,8 +24,6 @@ export class NodeRedTestServer{
         await new Promise((resolve,reject) => {
             outputNode.on('input',(msg)=>{
                 try{
-                    testOutput = msg
-                    // console.log(msg)
                     resolve(msg)
                 }
                 catch(err)
