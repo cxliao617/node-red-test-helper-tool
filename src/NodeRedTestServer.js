@@ -14,7 +14,7 @@ export class NodeRedTestServer{
         this.server.unload()
         return result
     }
-    testFlow(nodeArray,flow,inputNodeId,outputNodeId,testInput,done){
+    async testFlow(nodeArray,flow,inputNodeId,outputNodeId,testInput,done){
         let testOutput = undefined
         this.server.load(nodeArray,flow, ()=>{
             const inputNode = this.server.getNode(inputNodeId)
