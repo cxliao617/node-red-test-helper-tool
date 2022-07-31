@@ -1,3 +1,4 @@
+import nodeResolve from "@rollup/plugin-node-resolve"
 
 export class NodeRedTestServer{
     server
@@ -14,29 +15,28 @@ export class NodeRedTestServer{
         this.server.unload()
         return result
     }
-    async testFlow(nodeArray,flow,inputNodeId,outputNodeId,testInput,done){
+    async testFlow(nodeArray,flow,inputNodeId,outputNodeId,testInput){
         let testOutput = undefined
-        await this.server.load(nodeArray,flow, ()=>{
-            const inputNode = this.server.getNode(inputNodeId)
-            const outputNode = this.server.getNode(outputNodeId)
-            console.log('Got input: ',testInput)
-            console.log(inputNode,outputNode)
+        await this.server.load(nodeArray,flow)
+        const inputNode = this.server.getNode(inputNodeId)
+        const outputNode = this.server.getNode(outputNodeId)
+        // console.log('Got input: ',testInput)
+        // console.log(inputNode,outputNode)
+        await new Promise((resolve,reject) => {
             outputNode.on('input',(msg)=>{
                 try{
                     testOutput = msg
-                    console.log(msg)
-                    return Promise.resolve(msg)
+                    // console.log(msg)
+                    resolve(msg)
                 }
                 catch(err)
                 {
-                    console.error(`${err}`)
-                    return Promise.reject(err)
+                    // console.error(`${err}`)
+                    reject(err)
                 }
                 
             })
             inputNode.send(testInput)
         })
-        this.server.unload()
-        return testOutput
     }
 }
