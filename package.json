@@ -1,0 +1,33 @@
+{
+  "name": "node-red-test-helper-tool",
+  "version": "1.4.0",
+  "description": "Make node-red-node-test-helper easier to use",
+  "main": "dist/NodeRedTestServer.cjs.js",
+  "module": "dist/NodeRedTestServer.esm.js",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cxliao617/node-red-test-helper-tool.git"
+  },
+  "keywords": [
+    "node-red",
+    "node-red-node-test-helper",
+    "node-red-node-loader"
+  ],
+  "author": "cxliao617",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cxliao617/node-red-test-helper-tool/issues"
+  },
+  "homepage": "https://github.com/cxliao617/node-red-test-helper-tool#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "rollup": "^2.77.2",
+    "rollup-plugin-commonjs": "^10.1.0"
+  }
+}
