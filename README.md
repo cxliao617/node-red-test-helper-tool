@@ -3,7 +3,7 @@ Make node-red-node-test-helper easier to use
 
 # Usage
 ## Step 1. Setup nodered server with node-red-test-helper-tool
-```javascript=
+```javascript
 const testServer = new NodeRedTestServer(NodeRedServer) 
 ```
 ## Step 2.
@@ -13,11 +13,11 @@ const testServer = new NodeRedTestServer(NodeRedServer)
 ### outputNode: the node you want to get mock output
 ### mockInput: provide with the input data for input node
 ### testOutput: get the mock output to test
-```javascript=
+```javascript
 const testOuput = await testServer.testFlow(nodeArray,flow,inputNode,outputNode,mockInput)
 ```
 # Example
-```javascript=
+```javascript
 import {NodeLoader} from 'node-red-node-loader'
 import helper from 'node-red-node-test-helper'
 import {NodeRedTestServer} from 'node-red-test-helper-tool'
