@@ -16,6 +16,7 @@ export class NodeRedTestServer{
         return result
     }
     async testFlow(nodeArray,flow,inputNodeId,outputNodeId,testInput){
+        let testOutput = undefined
         await this.server.load(nodeArray,flow)
         const inputNode = this.server.getNode(inputNodeId)
         const outputNode = this.server.getNode(outputNodeId)
@@ -24,6 +25,7 @@ export class NodeRedTestServer{
         await new Promise((resolve,reject) => {
             outputNode.on('input',(msg)=>{
                 try{
+                    testOutput = msg
                     resolve(msg)
                 }
                 catch(err)
@@ -35,5 +37,6 @@ export class NodeRedTestServer{
             })
             inputNode.send(testInput)
         })
+        return testOutput
     }
 }
