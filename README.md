@@ -1,22 +1,29 @@
 # node-red-test-helper-tool
 Make node-red-node-test-helper easier to use
 
+# Dependencies
+node-red >= 3.0.1
+node-red-node-test-helper >= 0.3.0
+
 # Usage
-## Step 1. Setup nodered server with node-red-test-helper-tool
+##  Setup nodered server with node-red-test-helper-tool
 ```javascript
 const testServer = new NodeRedTestServer(NodeRedServer) 
 ```
-## Step 2.
-### nodeArray: all the nodes in flow(you can get from [node-red-node-loader](https://www.npmjs.com/package/node-red-node-loader))
-### flow: flow from node-red
-### inputNode: the node you want to mock input from
-### outputNode: the node you want to get mock output
-### mockInput: provide with the input data for input node
-### testOutput: get the mock output to test
+
+
+## testFlow
+
+#### nodeArray: all the nodes in flow(you can get from [node-red-node-loader](https://www.npmjs.com/package/node-red-node-loader))
+#### flow: flow from node-red
+#### inputNode: the node you want to mock input from
+#### outputNode: the node you want to get mock output
+#### mockInput: provide with the input data for input node
+#### testOutput: get the mock output to test
 ```javascript
 const testOuput = await testServer.testFlow(nodeArray,flow,inputNode,outputNode,mockInput)
 ```
-# Example
+### Example
 ```javascript
 import {NodeLoader} from 'node-red-node-loader'
 import helper from 'node-red-node-test-helper'
