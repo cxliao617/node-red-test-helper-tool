@@ -14,7 +14,9 @@ const testServer = new NodeRedTestServer(NodeRedServer)
 ## healthCheck
 
 **nodeArray**: all the nodes in flow(you can get from [node-red-node-loader](https://www.npmjs.com/package/node-red-node-loader))
+
 **flow**: flow from node-red
+
 **NodeId**: the node you want to test
 
 **return value**: boolean
@@ -58,11 +60,17 @@ describe("healthCheck",()=>{
 ## testFlow
 
 **nodeArray**: all the nodes in flow(you can get from [node-red-node-loader](https://www.npmjs.com/package/node-red-node-loader))
+
 **flow**: flow from node-red
+
 **inputNode**: the node you want to mock input from
+
 **outputNode**: the node you want to get mock output
+
 **mockInput**: provide with the input data for input node
+
 **testOutput**: get the mock output to test
+
 ```javascript
 const testOuput = await testServer.testFlow(nodeArray,flow,inputNode,outputNode,mockInput)
 ```
@@ -128,11 +136,17 @@ describe("testFlow",()=>{
 ## testFlowReceive
 
 **nodeArray**: all the nodes in flow(you can get from [node-red-node-loader](https://www.npmjs.com/package/node-red-node-loader))
+
 **flow**: flow from node-red
+
 **inputNode**: the node you want to mock input from
+
 **outputNode**: the node you want to get mock output
+
 **mockInput**: provide with the input data for input node
+
 **testOutput**: get the mock output to test
+
 ```javascript
 const testOuput = await testServer.testFlowReceive(nodeArray,flow,inputNode,outputNode,mockInput)
 ```
