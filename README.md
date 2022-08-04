@@ -2,8 +2,8 @@
 Make node-red-node-test-helper easier to use
 
 # Dependencies
-node-red >= 3.0.1
-node-red-node-test-helper >= 0.3.0
+node-red >= 3.0.1  
+node-red-node-test-helper >= 0.3.0  
 
 # Usage
 ##  Setup nodered server with node-red-test-helper-tool
