@@ -20,8 +20,7 @@ export class NodeRedTestServer{
         await this.server.load(nodeArray,flow)
         const inputNode = this.server.getNode(inputNodeId)
         const outputNode = this.server.getNode(outputNodeId)
-        // console.log('Got input: ',testInput)
-        // console.log(inputNode,outputNode)
+
         await new Promise((resolve,reject) => {
             outputNode.on('input',(msg)=>{
                 try{
@@ -30,7 +29,6 @@ export class NodeRedTestServer{
                 }
                 catch(err)
                 {
-                    // console.error(`${err}`)
                     reject(err)
                 }
                 
@@ -46,8 +44,7 @@ export class NodeRedTestServer{
         await this.server.load(nodeArray,flow)
         const inputNode = this.server.getNode(inputNodeId)
         const outputNode = this.server.getNode(outputNodeId)
-        // console.log('Got input: ',testInput)
-        // console.log(inputNode,outputNode)
+
         await new Promise((resolve,reject) => {
             outputNode.on('input',(msg)=>{
                 try{
@@ -56,7 +53,6 @@ export class NodeRedTestServer{
                 }
                 catch(err)
                 {
-                    // console.error(`${err}`)
                     reject(err)
                 }
                 
